@@ -1,0 +1,36 @@
+<h1>BOOK TICKET</h1>
+<app-trainalert [errorMessage]="error"></app-trainalert>
+<div class="example-button-row">
+    <!-- <button mat-raised-button color="primary" type="button" (click)="generateTicket()" >Generate  Ticket</button> -->
+    <button mat-raised-button color="warn" type="button" (click)="ticketReset()" >Reset  Tickets</button>
+</div>
+<form #ticketData="ngForm">
+    <input type="number" matInput name="number_of_ticket" [(ngModel)]="noofticket">
+    <button saveticket (click)="saveTicket()" mat-raised-button color="primary">Book Ticket</button>
+</form>
+<p>All Tickets</p>
+<div *ngFor="let number of totalRows">
+    <ul [ngClass]="{customul:1}">
+        <div *ngFor="let ticket of Tickets;let i=index">
+            <div *ngIf="number == ticket.row_no">
+                <li [ngClass]="{customlist:1}">
+
+                    Seat No: {{Tickets[i].id}} ,
+                    Status {{Tickets[i].is_occupied }},
+                    <p *ngIf="Tickets[i].booking_user && Tickets[i].booking_user >0"
+                        [ngClass]="{customul:0, customlist1:1} ">
+                        User : {{Tickets[i].booking_user}}
+                    </p>
+
+
+                </li>
+                <!-- <ul *ngFor="let tic of Tickets[i];let k =index">
+                <li>{{tic.id}}</li>
+            </ul> -->
+            </div>
+
+        </div>
+    </ul>
+
+    <!-- <p>{{ticket.id}}</p> -->
+</div>

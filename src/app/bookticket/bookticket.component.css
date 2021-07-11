@@ -1,0 +1,25 @@
+.customlist {
+  width: 10em;
+  height: fit-content;
+  min-height: 1em;
+  background: antiquewhite;
+
+  border: #a29898 1px solid;
+  margin: 8px;
+  list-style-type: none;
+  display: flex;
+}
+.customul {
+  text-align: center;
+  display: flex;
+}
+.customlist1 {
+  width: 8em;
+  height: 4em;
+  background: rgb(21, 181, 192);
+
+  border: #a29898 1px solid;
+  margin: 8px;
+  list-style-type: none;
+  display: flex;
+}
